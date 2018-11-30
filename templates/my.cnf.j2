@@ -63,8 +63,10 @@ relay-log-index = relay-bin.index
 {% endif %}
 {% endif %}
 
+{% if '8.0.' not in mysql_cli_version.stdout %}
 # Disabling symbolic-links is recommended to prevent assorted security risks
 symbolic-links = 0
+{% endif %}
 
 # User is ignored when systemd is used (fedora >= 15).
 user = mysql
