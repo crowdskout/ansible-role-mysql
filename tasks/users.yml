@@ -1,4 +1,7 @@
 ---
+
+# broke by https://github.com/ansible/ansible/issues/40091
+# run any commands manually for now or copy the errored string from the console
 - name: Ensure MySQL users are present.
   mysql_user:
     name: "{{ item.name }}"
@@ -9,4 +12,4 @@
     append_privs: "{{ item.append_privs | default('no') }}"
     encrypted: "{{ item.encrypted | default('no') }}"
   with_items: "{{ mysql_users }}"
-  no_log: true
+#  no_log: true
